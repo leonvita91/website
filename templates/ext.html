@@ -1,0 +1,34 @@
+
+
+<!Doctype html>
+<html>
+        <title>Queer Pride Dresden</title>
+        <head>
+                <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+                <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+        </head>
+
+        <body>
+                <!-- NAV BAR -->
+                <div class="container-nav">
+                        <nav>
+                                <div class="headline" >Queer Pride Dresden
+                                        <ul>
+						<li><a class="home-nav" href="{{ url_for('home') }}">Home</a></li>
+						<li><a class="nav" href="{{ url_for('team') }}">Associate</a></li>
+						<li><a class="nav" href="{{ url_for('about') }}">About us </a></li>
+                                        </ul>
+                        </nav>
+                                </div>
+                                <!--End Navbar-->
+
+                                <!--main-Background img-->
+                                <div class="img-background"></div>
+
+</html>
+
+{% block nav %}
+{% endblock %}
+
+
+

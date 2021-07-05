@@ -7,7 +7,7 @@ with pkgs;
 let
   my-python-packages = python-packages: with python-packages; [
     
-   flask flask-admin  pip  virtualenv gunicorn sqlalchemy flask-bootstrap
+   flask flask-admin  pip  virtualenv gunicorn flask_sqlalchemy flask_wtf
     requests  
     # other python packages you want
   ];

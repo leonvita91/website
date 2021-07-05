@@ -1,45 +1,13 @@
-<!Doctype html>
-<html>
-	<title>Queer Pride Dresden</title>
-	<head>		
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
-		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
-	</head>
-
-	<body>
-		<!-- NAV BAR -->
-		<div class="container-nav">
-			<nav>
-				<div class="headline" >Queer Pride Dresden
-					<ul>
-						<li><a class="home-nav" href="/">Home</a></li>
-						<li><a class="nav" href="/associate">Associate</a></li>
-						<li><a class="nav" href="about_us">About us </a></li>
-					</ul>
-			</nav>
-				</div>
-				<!--End Navbar-->
-
-				<!--main-Background img-->
-				<div class="img-background"></div>
-
-			<div class="container1">
-			<div class="main-title">
-			
-
-			<h1> Creative Writing </h1>
-			<p class="p1" >
+{% extends 'ext.html' %}
+{% block nav %}
 
 
-Generating random paragraphs can be an excellent way for writers to get their creative flow going at the beginning of the day. The writer has no idea what topic the random paragraph will be about when it appears. This forces the writer to use creativity to complete one of three common writing challenges. The writer can use the paragraph as the first one of a short story and build upon it. A second option is to use the random paragraph somewhere in a short story they create. The third option is to have the random paragraph be the ending paragraph in a short story. No matter which of these challenges is undertaken, the writer is forced to use creativity to incorporate the paragraph into their writing.
 
-			</p>	
-			</div>  
-			</div>
-			
+
+
+
+
 			<div class="second-title">
-	
-
 			<h2>Tackle Writers Block</h2>
 			<p>
 
@@ -86,9 +54,8 @@ Another writing challenge can be to take the individual sentences in the random 
 			<a class="instagram" href="https://www.instagram.com">Instagram</a>
 			<a class="youtube" href="https://www.youtube.com">YouTube</a>
         </body>
-</html>
+{% block text %}
+{% endblock %}
 
 
-
-
-
+{% endblock %}
