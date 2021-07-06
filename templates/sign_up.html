@@ -1,0 +1,32 @@
+{% extends 'ext.html' %}
+
+
+{% block nav %}
+  <div class="login-section">              
+                <form method="POST" action=''>   
+                        {{ form.hidden_tag() }}      
+                        <div class="form-group">         
+                                <legend class="legend">Regsiter</legend>
+                                        <br>             
+                                        {{ form.username(class="inputform")}}
+                                        </br> 
+					<br>             
+                                        {{ form.email(class="inputform")}}
+                                        </br>                        
+                                        <legend class="text-email">Email Address:</legend>
+                                        <br>                      
+                                        {{ form.password(class="inputform")}}
+                                        </br>
+					<br>                      
+                                        {{ form.conform_password(class="inputform")}}
+                                        </br>
+                                        <legend class="text-password">Conform password:</legend>
+                                        <br>
+                                        {{ form.submit(class="submitform")}}
+                                        </br>
+
+                        </div>
+
+
+
+{% endblock %}

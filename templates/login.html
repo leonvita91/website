@@ -4,16 +4,18 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
 
 	<div class="login-section">
-		<form method="POST" action= ''>
+		<form method="POST" action=''>
 			{{ form.hidden_tag() }}
 			<div class="form-group">
 				<legend class="legend">Login</legend>
 					<br>
-					{{ form.password(class="inputform")}}
-					</br>
-					<br>
 					{{ form.email(class="inputform")}}
 					</br>
+					<legend class="text-email">Email Address:</legend>
+					<br>
+					{{ form.password(class="inputform")}}
+					</br>
+					<legend class="text-password">Password:</legend>
 					<br>
 					{{ form.submit(class="submitform")}}
 					</br>

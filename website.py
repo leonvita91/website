@@ -1,8 +1,13 @@
 
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request,flash
 from flask_admin.contrib.sqla import ModelView
 from flask_sqlalchemy import SQLAlchemy
 from content import LoginForm
+from flask_login import LoginManager
+from flask_login import login_user,logout_user,current_user,login_required
+from flask_login import UserMixin
+from flask_bcrypt import Bcrypt
+
 
 
 #Init the Web
@@ -11,8 +16,14 @@ app = Flask (__name__)
 app.config['SECRET_KEY'] = '018be4ee04cd65064e1443ce27349eda2c2d637f'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+#End Init
 
-class User(db.Model):
+
+
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer,primary_key=True)
     username = db.Column(db.String(20),unique=True, nullable=False)
     email = db.Column(db.String(120),unique=True, nullable=False)
@@ -32,6 +43,10 @@ class Post(db.Model):
 
     def __repr__(slef):
         return f"Post('{self.title}')"
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 
@@ -53,11 +68,41 @@ def about():
 
 
 
+#register
+#@app.route("/sign_up",methods=['POST','GET'])
+#def sign_up():
+#    form = SignupForm()
+#    if form.validate_on_submit():
+#        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+#        user = User(username=form.username.data, email=form.email.data,password=hashed_password)
+#        db.session.add(user)
+#        db.session.commit()        
+#    return render_template("sign_up.html",form=form)
+
+
+
 #loginPage
 @app.route("/login",methods=['POST','GET'])
 def login():
     form = LoginForm()
-    return render_template("login.html",title='Login', form=form)
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and  bcrypt.check_password_hash(user.password,form.password.data):
+            login_user(user)
+            flash("Welcome Admin!")
+            return redirect(url_for('admin'))
+        else:
+            flash('Login in Unsuccessful,please try again!')
+    return render_template("login.html", form=form)
+
+
+
+#AdminPage
+@app.route("/admin")
+@login_required
+def admin():
+      return render_template("admin.html")
+
 
 
 
