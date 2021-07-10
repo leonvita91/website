@@ -1,0 +1,9 @@
+{
+
+	"SECRET_KEY":"018be4ee04cd65064e1443ce27349eda2c2d637f",
+	"SQLALACHEMEY_DATABASE_URI":"sqlite:///data.db",
+	"EMAIL_USER":"pride@gmail.com",
+	"EMAIL_PASS":"P@ssw0rd"
+
+}
+

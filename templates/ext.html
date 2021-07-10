@@ -14,11 +14,19 @@
                         <nav>
                                 <div class="headline" >Queer Pride Dresden
                                         <ul>	
-
+						{% if current_user.is_authenticated  %}
+							<li><a class="logout-nav" href="{{ url_for('logout') }}">Logout </a></li>
+							<li><a class="home-nav" href="{{ url_for('home') }}">Home</a></li>
+							<li><a class="nav" href="{{ url_for('team') }}">Associate</a></li>
+							<li><a class="nav" href="{{ url_for('about') }}">About us </a></li>
+							<li><a class="admin-nav" href="{{ url_for('admin') }}">Admin Account </a></li>
+							<li><a class="new-post" href="{{ url_for('new_post') }}">New Post </a></li>
+						{% else %}
 							<li><a class="home-nav" href="{{ url_for('home') }}">Home</a></li>
 							<li><a class="nav" href="{{ url_for('team') }}">Associate</a></li>
 							<li><a class="nav" href="{{ url_for('about') }}">About us </a></li>
 							<li><a class="login-nav" href="{{ url_for('login') }}">Login </a></li>
+						{% endif %}	
 					</ul>
                         
 			</nav>

@@ -1,7 +1,7 @@
 
 
 from flask_wtf import FlaskForm 
-from wtforms import StringField , PasswordField, SubmitField,BooleanField
+from wtforms import StringField , PasswordField, SubmitField, BooleanField, TextAreaField 
 from wtforms.validators import DataRequired, Length ,EqualTo ,email_validator,Email 
 from wtforms.fields.html5 import EmailField
 
@@ -19,15 +19,14 @@ class LoginForm(FlaskForm):
 
     email = EmailField('Email',validators=[DataRequired(),Email()])
     password  = PasswordField('Password',validators=[DataRequired()])
+    remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
 
-
-#class First_content(FlaskForm):
-
-#    firstpost = StringField('first-content',validators=[DataRequired(),Length(min=2,max=800)])
-#    submit = SubmitField('Post')
-
+class PostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    submit = SubmitField('Post')
 
 #class Second_content(FlaskForm):
 

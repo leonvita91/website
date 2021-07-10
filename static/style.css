@@ -11,8 +11,12 @@ nav{background-color:SteelBlue;
 	position:fixed;
 	}
 .login-nav{margin-left:1000%;
-
 }
+.logout-nav{margin-left:1170%;
+}
+.admin-nav{margin-left:800px;
+}
+
 .container-nav{width:100%;
 	margin:auto;}
 .headline{color:white;

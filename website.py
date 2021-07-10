@@ -2,7 +2,7 @@
 from flask import Flask, render_template, redirect, url_for, request,flash
 from flask_admin.contrib.sqla import ModelView
 from flask_sqlalchemy import SQLAlchemy
-from content import LoginForm
+from content import LoginForm,PostForm
 from flask_login import LoginManager
 from flask_login import login_user,logout_user,current_user,login_required
 from flask_login import UserMixin
@@ -35,25 +35,24 @@ class User(db.Model, UserMixin):
     
 
 class Post(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    title = db.Column(db.String(500),nullable=False)
-    content = db.Column(db.Text,nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(500), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
-    def __repr__(slef):
+    def __repr__(self):
         return f"Post('{self.title}')"
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
-
-
 @app.route("/")
 def home():
-    return render_template("home.html")
+    posts = Post.query.get(2)
+    return render_template('home.html',posts=posts )
+
 
 #partner
 @app.route("/associate")
@@ -84,17 +83,25 @@ def about():
 #loginPage
 @app.route("/login",methods=['POST','GET'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('admin'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and  bcrypt.check_password_hash(user.password,form.password.data):
-            login_user(user)
+            login_user(user, remember=form.remember.data)
             flash("Welcome Admin!")
             return redirect(url_for('admin'))
         else:
             flash('Login in Unsuccessful,please try again!')
     return render_template("login.html", form=form)
 
+
+#LogoutPage
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
 
 
 #AdminPage
@@ -104,7 +111,18 @@ def admin():
       return render_template("admin.html")
 
 
-
+@app.route("/post/new", methods=['GET', 'POST'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created!', 'success')
+        return redirect(url_for('home'))
+    return render_template('new_post.html', title='New Post',
+                           form=form, legend='New Post')
 
 
 #End Init the Web
