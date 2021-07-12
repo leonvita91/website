@@ -63,9 +63,10 @@ li a:hover {
 
 	/*Body side */
 
-.img-background{background: url('/static/img/rainbow.jpg') fixed center/cover;
+.img-background{background: url('/static/img/rainbow.jpg')fixed;
 	height:2000px;
-	width:1908px;
+	max-height:100%;
+	width:100.8%;
 	background-size:cover;
 	margin-top:-32px;
 	margin-left:-8px;
@@ -85,17 +86,9 @@ li a:hover {
 	padding:1px 20px 1px 20px ;
 	border:5px green solid;
 	border-radius:10px;
-	overflow:auto;
+	overflow:hidden;
 	text-align:justify;
 
-}
-
-.main-title:hover{box-shadow:1px 1px 5px 5px blue;
-	transition: box-shadow 1s;
-}
-
-.container1{width:100%;
-	margin:auto;
 }
 
 .main-title h1{color:black;
@@ -135,7 +128,7 @@ li a:hover {
 	transition: box-shadow 1s;
 }
 
-.second-title h2{color:black;
+.second-title h2{color:red;
 	font-family:arail;
 	font-size:20px;
 	position:static;
@@ -169,8 +162,6 @@ li a:hover {
 }
 
 .third-title:hover{box-shadow:1px 1px 5px 5px blue;
-		
-
 	transition: box-shadow 1s;
 }
 
@@ -199,11 +190,11 @@ li a:hover {
 
 
 img { background-color:black;
-	width:100%; height:500px;
+	width:100%; height:550px;
 }
 .slideshow-container {
   max-width:70%;
-  max-height:500px; 
+  max-height:550px; 
   position:static;
   margin-top:-1200px;
   margin-left:300px;
@@ -315,6 +306,63 @@ img { background-color:black;
 	animation-duration:2s;
 		
 }
+
+.down-nav {background:black;
+	position:static;
+	width:101.4%;
+	margin-top:0%;
+	height:51px;
+	margin-left:-1%;
+
+}
+.powered-by {color:white;
+	position:relative;
+	left:40px;
+	top:12px;	
+	font-weight:bold;
+	font-size:18px;
+	animation-name:slidin;
+	animation-duration 2s;
+	
+}
+
+
+@keyframes admin {
+	from {
+		margin-left:100%;
+		width: 50%;
+	}
+	to {
+		margin-left:43%;
+		width:15%;
+	}
+}
+
+.welcome-admin {color:red; 
+		width:15%;
+		margin-left:43%;
+		font-size:50px;		
+		padding: 5px 5px 5px 5px;
+		border:5px red solid;
+  		border-radius: 30%;
+		margin-top:-1700px;
+		text-align:center;
+		font-weight:bold;
+		overflow:hidden;
+		animation-name:admin;
+		animation-duration 2s;
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

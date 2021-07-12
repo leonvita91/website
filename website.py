@@ -50,7 +50,7 @@ def load_user(user_id):
 
 @app.route("/")
 def home():
-    posts = Post.query.get(2)
+    posts = Post.query.get(8)
     return render_template('home.html',posts=posts )
 
 
@@ -119,7 +119,7 @@ def new_post():
         post = Post(title=form.title.data, content=form.content.data, author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash('Your post has been created!', 'success')
+        flash('Your post has been created!')
         return redirect(url_for('home'))
     return render_template('new_post.html', title='New Post',
                            form=form, legend='New Post')

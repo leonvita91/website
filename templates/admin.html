@@ -1,5 +1,11 @@
 {% extends "ext.html" %}
 {% block nav %}
-	<h1>{{ current_user.username }} </h1>
-	
-{% endblock %}
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    <ul class=welcome-admin>
+	    {% for message in messages %}
+	      <li>{{ message }}</li>
+	    {% endfor %}
+	    </ul>
+	  {% endif %}
+{% endwith %}{% endblock %}

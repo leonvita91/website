@@ -19,27 +19,35 @@
 							<li><a class="home-nav" href="{{ url_for('home') }}">Home</a></li>
 							<li><a class="nav" href="{{ url_for('team') }}">Associate</a></li>
 							<li><a class="nav" href="{{ url_for('about') }}">About us </a></li>
-							<li><a class="admin-nav" href="{{ url_for('admin') }}">Admin Account </a></li>
 							<li><a class="new-post" href="{{ url_for('new_post') }}">New Post </a></li>
+					
 						{% else %}
 							<li><a class="home-nav" href="{{ url_for('home') }}">Home</a></li>
 							<li><a class="nav" href="{{ url_for('team') }}">Associate</a></li>
 							<li><a class="nav" href="{{ url_for('about') }}">About us </a></li>
 							<li><a class="login-nav" href="{{ url_for('login') }}">Login </a></li>
 						{% endif %}	
-					</ul>
-                        
+					
+				</ul>
 			</nav>
-                                </div>
-                                <!--End Navbar-->
+
+		                                <!--End Navbar-->
 
                                 <!--main-Background img-->
                                 <div class="img-background"></div>
+				
+				<!-- down-bar -->
+		<body>
+				   <div class="down-nav">
+                        <li class="powered-by">Powered by Nixvita</li>
+                </div>
+
+			</body>
+
+
 
 </html>
-
 {% block nav %}
-{% endblock %}
-
-
-
+{% endblock nav %}
+{% block content %}
+{% endblock content %}
