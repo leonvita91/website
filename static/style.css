@@ -356,15 +356,46 @@ img { background-color:black;
 }
 
 
+.content-section{margin-top:-1500px;
+		margin-left:800px;
+		
+}
+
+legend-title {font-size:50:w
+	px;
+
+}
 
 
 
+/* update posts */
 
+.update-admin-posts {
+	margin-top:-80%;
+	margin-left:40%;
+}
 
+.welcome-massage {background:white;color:green;
+	width:40%;
+	margin-top:-150%;
+	padding: 2px 2px 2px 2px;
+	border:3px black solid;
+	font-weight:bold;
+	text-align:center;
+}
 
+.links-update {background:white;color:black;
+	width:15%;
+	margin-left:50%;
+	padding:1px 1px 1px 1px;
+	overflow:justify;
+	border: 1px red solid;
+	text-decoration:none;
+	font-size:23px;
+	font-weight:bold;
+	text-align:center;
 
-
-
+}
 
 
 

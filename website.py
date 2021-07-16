@@ -50,8 +50,10 @@ def load_user(user_id):
 
 @app.route("/")
 def home():
-    posts = Post.query.get(8)
-    return render_template('home.html',posts=posts )
+    first_post = Post.query.get(1)
+    second_post = Post.query.get(2)
+    third_post = Post.query.get(3)
+    return render_template('home.html',first_post=first_post, second_post=second_post,third_post=third_post )
 
 
 #partner
@@ -123,6 +125,56 @@ def new_post():
         return redirect(url_for('home'))
     return render_template('new_post.html', title='New Post',
                            form=form, legend='New Post')
+
+@app.route("/update_posts")
+@login_required
+def update_post():
+    return render_template('update_post.html', legend='Update Posts')
+
+
+
+@app.route("/post/update1", methods=['GET', 'POST'])
+@login_required
+def update_post_1():
+    post_id = 1
+    post = Post.query.get_or_404(post_id)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash('Your post has been updated!', 'success')
+    return render_template('update_post_1.html', title='Update Post',
+                           form=form, legend='Update Post')
+
+@app.route("/post/update2", methods=['GET', 'POST'])
+@login_required
+def update_post_2():
+    post_id = 2
+    post = Post.query.get_or_404(post_id)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash('Your post has been updated!', 'success')
+    return render_template('update_post_2.html', title='Update Post',
+                           form=form, legend='Update Post')
+
+@app.route("/post/update3", methods=['GET', 'POST'])
+@login_required
+def update_post_3():
+    post_id = 3
+    post = Post.query.get_or_404(post_id)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash('Your post has been updated!', 'success')
+    return render_template('update_post_3.html', title='Update Post',
+                           form=form, legend='Update Post')
+
 
 
 #End Init the Web

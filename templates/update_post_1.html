@@ -1,0 +1,16 @@
+{% extends "ext.html" %}
+{% block nav %}
+     <div class="content-section">
+    	<form method="POST" action="">
+        {{ form.hidden_tag() }}
+
+	 <h2 class="update-title"> {{ form.title }} </h2>
+	 <br>
+	 <p class="update-content"> {{ form.content }} </p>
+	 <br>
+	 <button class="update-button" {{ form.submit }} >Update</button>
+
+
+
+{% endblock nav %}
+
