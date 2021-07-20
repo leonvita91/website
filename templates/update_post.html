@@ -1,20 +1,19 @@
 {% extends "ext.html" %}
 {% block nav %}
 
- 	<div class="update-admin-posts">
-	  <h1 class="welcome-massage">Welcome Admin which post you want to Update!</h1>
-	     <div class="links-update">  
-	 	 <br>
-	  	<a class="first-update" href="{{ url_for("update_post_1")}}">Update First Post</a>
-	 	 </br>
-	      </div>
-	 	 <br>
-	 	 <a class="second-update" href="{{ url_for("update_post_2")}}">Update Second Post</a>
-	 	 </br>
-	 	 <br>
-	 	 <a class="third-update" href="{{ url_for("update_post_3")}}">Update Third Post</a>
-	 	 </br>
-	</div>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='update-posts.css')}}">
 
+
+	<h1 class="welcome-massage">Welcome Admin which post you want to Update!</h1>
+	<br>
+		 <a class="first-update" href="{{ url_for("update_post_1")}}">Update First Post</a>
+	 </br>
+	
+	 <br>
+		<a class="second-update" href="{{ url_for("update_post_2")}}">Update Second Post</a>
+	</br>
+	<br>
+		<a class="third-update" href="{{ url_for("update_post_3")}}">Update Third Post</a>
+	</br>
 {% endblock %}
 

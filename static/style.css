@@ -64,8 +64,8 @@ li a:hover {
 	/*Body side */
 
 .img-background{background: url('/static/img/rainbow.jpg')fixed;
-	height:2000px;
-	max-height:100%;
+	height:1500px;
+	max-height:500%;
 	width:100.8%;
 	background-size:cover;
 	margin-top:-32px;
@@ -81,17 +81,18 @@ li a:hover {
 	position:static;
 	width:31%;
 	height:600px;
-	margin-top:-1150px;
-	margin-left:300px;
-	padding:1px 20px 1px 20px ;
+	max-height:100%;
+	margin-top:-36%;
+	margin-left:15%;
+	padding:1px 20px 1px 20px;
 	border:5px green solid;
 	border-radius:10px;
-	overflow:hidden;
+	overflow:auto;
 	text-align:justify;
 
 }
 
-.main-title h1{color:black;
+.main-title h1{color:red;
 	text-align:center;
 	font-family:arail;
 	font-size:20px;
@@ -113,8 +114,9 @@ li a:hover {
 	position:static;
 	width:31%;
 	height:250px;
-	margin-top:-600px;
-	margin-left:980px;
+	max-height:250px;
+	margin-top:-31.5%;
+	margin-left:52%;
 	padding:1px 20px 10px 20px;
 	border:5px green solid;
 	border-radius:10px;
@@ -196,8 +198,8 @@ img { background-color:black;
   max-width:70%;
   max-height:550px; 
   position:static;
-  margin-top:-1200px;
-  margin-left:300px;
+  margin-top:-65%;
+  margin-left:15%;
   border:5px red solid;
 }
 
@@ -258,8 +260,8 @@ img { background-color:black;
 	position:fixed;
 	left:0%;
 	top:250px;
-	width:90px;
-	margin-left:0px;
+	width:4.5%;
+	margin-left:0%;
 	border: 5px blue double;
 	border-radius:6px;
 	font-weight:bold;
@@ -356,46 +358,12 @@ img { background-color:black;
 }
 
 
-.content-section{margin-top:-1500px;
-		margin-left:800px;
+
+
 		
-}
-
-legend-title {font-size:50:w
-	px;
-
-}
 
 
 
-/* update posts */
-
-.update-admin-posts {
-	margin-top:-80%;
-	margin-left:40%;
-}
-
-.welcome-massage {background:white;color:green;
-	width:40%;
-	margin-top:-150%;
-	padding: 2px 2px 2px 2px;
-	border:3px black solid;
-	font-weight:bold;
-	text-align:center;
-}
-
-.links-update {background:white;color:black;
-	width:15%;
-	margin-left:50%;
-	padding:1px 1px 1px 1px;
-	overflow:justify;
-	border: 1px red solid;
-	text-decoration:none;
-	font-size:23px;
-	font-weight:bold;
-	text-align:center;
-
-}
 
 
 

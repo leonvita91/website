@@ -39,8 +39,7 @@ class Post(db.Model):
     title = db.Column(db.String(500), nullable=False)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
-
+    
     def __repr__(self):
         return f"Post('{self.title}')"
 
@@ -53,7 +52,8 @@ def home():
     first_post = Post.query.get(1)
     second_post = Post.query.get(2)
     third_post = Post.query.get(3)
-    return render_template('home.html',first_post=first_post, second_post=second_post,third_post=third_post )
+    return render_template('home.html',first_post=first_post, second_post=second_post,
+            third_post=third_post )
 
 
 #partner
@@ -144,6 +144,7 @@ def update_post_1():
         post.content = form.content.data
         db.session.commit()
         flash('Your post has been updated!', 'success')
+        return redirect(url_for('home'))
     return render_template('update_post_1.html', title='Update Post',
                            form=form, legend='Update Post')
 
@@ -158,6 +159,7 @@ def update_post_2():
         post.content = form.content.data
         db.session.commit()
         flash('Your post has been updated!', 'success')
+        return redirect(url_for('home'))
     return render_template('update_post_2.html', title='Update Post',
                            form=form, legend='Update Post')
 
@@ -172,6 +174,7 @@ def update_post_3():
         post.content = form.content.data
         db.session.commit()
         flash('Your post has been updated!', 'success')
+        return redirect(url_for('home'))
     return render_template('update_post_3.html', title='Update Post',
                            form=form, legend='Update Post')
 

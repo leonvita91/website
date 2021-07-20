@@ -1,15 +1,25 @@
 {% extends "ext.html" %}
 {% block nav %}
-     <div class="content-section">
+     
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='update-posts.css')}}">
+
+
     	<form method="POST" action="">
         {{ form.hidden_tag() }}
-
-	 <h2 class="update-title"> {{ form.title }} </h2>
+	<div class="form-carry">
+	<br>
+	<h1 class="head-title">Title: </h1>
+	 {{ form.title(class="update-title") }}
+	 </br>
 	 <br>
-	 <p class="update-content"> {{ form.content }} </p>
+	<h2 class="head-content">Content: </h2>
+	 {{ form.content(class="update-content") }}
+	 </br>
 	 <br>
 	 <button class="update-button" {{ form.submit }} >Update</button>
-
+	 </br> 
+	</div>
 
 
 {% endblock nav %}

@@ -1,0 +1,28 @@
+{% extends "ext.html" %}
+{% block nav %}
+     
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='update-posts.css')}}">
+
+
+        <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="form-carry">
+        <br>
+        <h1 class="head-title">Title: </h1>
+         {{ form.title(class="update-title") }}
+         </br>
+         <br>
+        <h2 class="head-content">Content: </h2>
+         {{ form.content(class="update-content") }}
+         </br>
+         <br>
+         <button class="update-button" {{ form.submit }} >Update</button>
+         </br> 
+        </div>
+
+
+{% endblock nav %}
+
+
+
