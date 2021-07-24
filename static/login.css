@@ -1,15 +1,14 @@
 
 
-
 .form-group {
 	   position:absolute;
-	   top:40%;
-	   left:45%; 
+	   top:30%;
+	   left:42%;
 	     
 }
 
 .legend{color:white;background:linear-gradient(to right,darkviolet,red,yellow,green);
-	font-size:90px;
+	font-size:500%;
 	font-family: "Gill Sans", sans-serif;
 	font-weight:bold;
 }
@@ -23,7 +22,7 @@
 .submitform{color:white;background:linear-gradient(to right,darkviolet,red,green);
 	padding:2px 5px 5px 2px;
 	border:2px green solid;
-	margin-left:100px;
+	left:100px;
 	font-size:25px;
 	font-weight:bold;
 

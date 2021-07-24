@@ -1,99 +1,126 @@
 /* update page */
-.welcome-massage {background:white;color:green;
-	width:25%;
+.welcome-massage {background:white center ;color:green;
+	position:relative;
+	top:30%;
+	left:40%;
+	width:15%;
+	height:2%;
+	max-height:10%;
+	max-width:15%;
 	text-align:center;
+	font-size:100%;
 	overflow:justify;
-	padding: 20px 20px 20px 25px;
+	padding: 2% 2% 2% 2%;
 	border:3px black solid;
-	border-radius:50%;
-	margin-top:-85%;
-	margin-left:35%;
+	border-radius:20%;
 }
 
 .first-update{background:white;
-	margin-left:22%;
-	width:20%;
+	position:absolute;
+	top:50%;
+	left:40%;
+	width:4%;
+	max-width:4%;
+	max-height:6%;
 	padding: 15px 15px 15px 15px;
 	border:2px black solid;
-	border-radius:50%;
+	border-radius:20%;
 	text-decoration:none;
 	font-weight:bold;
-	font-size:30px;
-
+	font-size:100%;
+	overflow:justify;
+	text-align:center;
 }
 
 .second-update{background:white;
-	margin-left:40%;
-	width:20%;
+	position:absolute;
+	top:50%;
+	left:47%;
+	width:4%;
+	max-width:4%;
+	max-height:6%;
 	padding: 15px 15px 15px 15px;
 	border:2px black solid;
-	border-radius:50%;
+	border-radius:20%;
 	text-decoration:none;
 	font-weight:bold;
-	font-size:30px;
+	font-size:100%;
+	overflow:justify;
+	text-align:center;
+
 }
+
 .third-update{background:white;
-	margin-left:60%;
-	width:20%;
-	padding: 15px 15px 15px 15px;
+	position:absolute;
+	top:50%;
+	left:54%;
+	width:4%;
+	max-width:4%;
+	max-height:6%;
+	padding:15px 15px 15px 15px;
 	border:2px black solid;
-	border-radius:50%;
+	border-radius:20%;
+	text-align:center;
 	text-decoration:none;
 	font-weight:bold;
-	font-size:30px;
+	font-size:100%;
+	overflow:justify;
 
 }
 
 /* update posts  style */
-.form-carry {margin-top:-80%;
-
-}
 
 .head-title{background:white;
+	top:30%;
+	left:30%;
+	position:absolute;
 	width:8%;
 	border:2px black solid;
 	border-radius;80%;
-	margin-left:25%;
 	text-align:center;
 }
 
 
 .update-title {
-	margin-left:25%;
+	top:38%;
+	left:30%;
+	position:absolute;
 	width:20%;
-	height:25px;
+	height:3%;
 	font-weight:bold;
 	font-size:25px;
 	
 }
 
+
+
 .head-content{background:white;
+	top:45%;
+	left:30%;
+	position:absolute;
 	width:8%;
 	border:2px black solid;
 	border-radius;80%;
-	margin-left:25%;
 	text-align:center;
 }
-.update-content{margin-left:25%;
-	width:50%;
-	height:100px;
-	font-size:30px;
-}
+
+
+.update-content {
+	top:51%;
+	left:30%;
+	position:absolute;
+	width:35%;
+	height:10%;
+	font-weight:bold;
+	font-size:25px;
 	
-.update-button {margin-left:25%;
-		width:10%;
-		height:15%;
-		text-decoration:none;
-		font-size:18px;
-		border:2px black solid;
-		border-radius:15%;
 }
 
-
-
-
-
-
+.update-button {
+		position:absolute;
+		top:63%;
+		left:30%;
+}
 
 
 

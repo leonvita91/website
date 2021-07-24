@@ -9,8 +9,10 @@ nav{background-color:SteelBlue;
 	margin-left:0;
 	border-bottom:2px blue solid;
 	border-right:1px blue solid;
-	position:absolute;
-	}
+	position:sticky;
+	z-index:2;	
+}
+
 .login-nav{right:0%;
 	position:relative;
 	
@@ -18,11 +20,17 @@ nav{background-color:SteelBlue;
 .logout-nav{float:right;
 
 }
+
 .admin-nav{margin-left:50%;
+
 }
 
 .container-nav{width:100%;
-	margin:0;}
+		margin:0;
+		position:fixed;
+		z-index:2;
+}
+
 .headline{color:white;
 	font-size:30px;
 	text-align:center;
@@ -68,8 +76,12 @@ li a:hover {
 	/*Body side */
 
 body {
+        background: url('/static/img/rainbow.jpg') no-repeat center center fixed;
+	position:absolute;
+	width:100%;
+	height:150%;
+	max-height:150%;
 	margin:0;
-        background: url('/static/img/rainbow.jpg') no-repeat center center fixed;max-width:100%;max-height:100%;
 
 }
 
@@ -82,11 +94,10 @@ body {
 	position:absolute;
 	top:30%;
 	left:20%;
-	margin:0;
 	width:25%;
-	padding:1px 20px 1px 20px;
 	height:50%;
 	max-height:100%;
+	padding:1px 20px 1px 20px;
 	border:5px green solid;
 	border-radius:10px;
 	overflow:auto;
@@ -100,12 +111,13 @@ body {
 .h1 {	color:black;
 	position:relative;
 	text-align:center;
+	font-size:150%;
 
 }
 .p1{color:black;
 	text-align:center;
 	font-family:arail;
-	font-size:18px;		
+	font-size:90%;		
 	position:relative;
 }
 
@@ -132,7 +144,7 @@ body {
 
 .second-title h2{color:red;
 	font-family:arail;
-	font-size:20px;
+	font-size:150%;
 	position:relative;
 	line-height:0.5em;
 	text-align:center;
@@ -361,10 +373,41 @@ img { background-color:black;
 }
 
 
+/* Associate information  */
 
+.addres-tel {background-color:white;
+	position:absolute;
+	top:30%;
+	left:40%;
+	width:30%;
+	padding:1%;
+	border:4px black solid;
+	overflow:justify;
+	text-align:center;
+}
 
 		
+.open-times-az  {background-color:white;
+	position:absolute;
+	top:40%;
+	left:40%;
+	width:30%;
+	padding:1%;
+	border:4px black solid;
+	overflow:justify;
+	text-align:center;
+}
 
+.about-az  {background-color:white;
+	position:absolute;
+	top:50%;
+	left:40%;
+	width:30%;
+	padding:1%;
+	border:4px black solid;
+	overflow:justify;
+	text-align:center;
+}
 
 
 
