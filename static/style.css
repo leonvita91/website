@@ -2,23 +2,27 @@
 
 /* NAVBAR */
 nav{background-color:SteelBlue;
-	width:100.8%;
+	width:100%;
+	max-width:100%;
 	height:75px;
-	margin-top:20px;
-	margin-left:-8px;
+	margin-top:0;
+	margin-left:0;
 	border-bottom:2px blue solid;
 	border-right:1px blue solid;
-	position:fixed;
+	position:absolute;
 	}
-.login-nav{margin-left:1000%;
+.login-nav{right:0%;
+	position:relative;
+	
 }
-.logout-nav{margin-left:1170%;
+.logout-nav{float:right;
+
 }
-.admin-nav{margin-left:800px;
+.admin-nav{margin-left:50%;
 }
 
 .container-nav{width:100%;
-	margin:auto;}
+	margin:0;}
 .headline{color:white;
 	font-size:30px;
 	text-align:center;
@@ -63,60 +67,56 @@ li a:hover {
 
 	/*Body side */
 
-.img-background{background: url('/static/img/rainbow.jpg')fixed;
-	height:1500px;
-	max-height:500%;
-	width:100.8%;
-	background-size:cover;
-	margin-top:-32px;
-	margin-left:-8px;
+body {
+	margin:0;
+        background: url('/static/img/rainbow.jpg') no-repeat center center fixed;max-width:100%;max-height:100%;
 
 }
+
 
 	
 
 /* Paragraph style */
 
 .main-title{background-color:rgba(255,255,255,0.9);
-	position:static;
-	width:31%;
-	height:600px;
-	max-height:100%;
-	margin-top:-36%;
-	margin-left:15%;
+	position:absolute;
+	top:30%;
+	left:20%;
+	margin:0;
+	width:25%;
 	padding:1px 20px 1px 20px;
+	height:50%;
+	max-height:100%;
 	border:5px green solid;
 	border-radius:10px;
 	overflow:auto;
 	text-align:justify;
 
 }
-
-.main-title h1{color:red;
-	text-align:center;
-	font-family:arail;
-	font-size:20px;
-	position:static;
-	line-height:0.5em;
-	
+.main-title:hover{box-shadow:1px 1px 5px 5px blue;
+	transition: box-shadow 1s;
 }
 
+.h1 {	color:black;
+	position:relative;
+	text-align:center;
+
+}
 .p1{color:black;
 	text-align:center;
 	font-family:arail;
 	font-size:18px;		
-	position:static;
-	
+	position:relative;
 }
 
 
 .second-title {background-color:rgba(255,255,255,0.9);
-	position:static;
+	margin:0;
+	top:30%;
+	left:50%;
+	position:absolute;
+	height:25%;
 	width:31%;
-	height:250px;
-	max-height:250px;
-	margin-top:-31.5%;
-	margin-left:52%;
 	padding:1px 20px 10px 20px;
 	border:5px green solid;
 	border-radius:10px;
@@ -133,13 +133,14 @@ li a:hover {
 .second-title h2{color:red;
 	font-family:arail;
 	font-size:20px;
-	position:static;
+	position:relative;
 	line-height:0.5em;
 	text-align:center;
 
 }
 
 .p2{color:black;
+	text-align:center;
 	font-family:arail;
 	font-size:20px;	
 	
@@ -149,11 +150,11 @@ li a:hover {
 
 
 .third-title {background-color:rgba(255,255,255,0.9);
-	position:static;
+	left:50%;
+	top:60%;
 	width:31%;
-	height:250px;
-	margin-top:50px;
-	margin-left:980px;
+	height:20%;
+	position:absolute;
 	padding:1px 20px 1px 20px;
 	border:5px green solid;
 	border-radius:10px;
@@ -172,15 +173,17 @@ li a:hover {
 	font-family:arail;
 	text-align:center;
 	font-size:20px;
-	position:static;
 	line-height:0.5em;
+	position:relative;
 
 }
 
 .p3{color:black;
+	text-align:center;
 	font-family:arail;
 	font-size:18px;		
-	position:static;
+	position:relative;
+
 }
 
 
@@ -197,9 +200,9 @@ img { background-color:black;
 .slideshow-container {
   max-width:70%;
   max-height:550px; 
-  position:static;
+  /* position:static;
   margin-top:-65%;
-  margin-left:15%;
+  margin-left:15%;*/
   border:5px red solid;
 }
 
@@ -310,11 +313,10 @@ img { background-color:black;
 }
 
 .down-nav {background:black;
-	position:static;
-	width:101.4%;
-	margin-top:0%;
+	position:absolute;
+	bottom:0;
+	width:100%;
 	height:51px;
-	margin-left:-1%;
 
 }
 .powered-by {color:white;
@@ -322,7 +324,7 @@ img { background-color:black;
 	left:40px;
 	top:12px;	
 	font-weight:bold;
-	font-size:18px;
+	font-size:100%;
 	animation-name:slidin;
 	animation-duration 2s;
 	
@@ -341,13 +343,14 @@ img { background-color:black;
 }
 
 .welcome-admin {color:red; 
-		width:15%;
-		margin-left:43%;
-		font-size:50px;		
+		top:50%;
+		left:40%;
+		width:25%;
+		position:absolute;
+		font-size:80px;		
 		padding: 5px 5px 5px 5px;
 		border:5px red solid;
   		border-radius: 30%;
-		margin-top:-1700px;
 		text-align:center;
 		font-weight:bold;
 		overflow:hidden;

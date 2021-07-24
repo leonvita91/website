@@ -1,9 +1,11 @@
 
 
 
-.form-group {margin-left:800px;
-	     margin-top:-1600px;
-	     position:fixed;
+.form-group {
+	   position:absolute;
+	   top:40%;
+	   left:45%; 
+	     
 }
 
 .legend{color:white;background:linear-gradient(to right,darkviolet,red,yellow,green);

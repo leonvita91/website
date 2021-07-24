@@ -1,43 +1,21 @@
 {% extends 'ext.html' %}
 {% block nav %}
 
-		<div class="main-title">
-			<h2 class="top-title">{{ first_post.title }}</h2>
-			<p class="p1">{{ first_post.content}}</p>
-		</div>
 
-
+			<div class="main-title">
+				<h1 class="h1">{{ first_post.title }}</h1>
+				<p class="p1">{{ first_post.content}}</p>
+			</div>
+			
 			<div class="second-title">
-				<h2 class="">{{ second_post.title }}</h2>
+				<h2 class="h2">{{ second_post.title }}</h2>
 				<p class="p2" >{{ second_post.content }}</p>
 			</div>
-
 			<div class="third-title">
 				<h3>{{third_post.title }}</h3>
 				<p class="p3">{{ third_post.content }}</p>
 			</div>
-			<!--photo img slider -->
 			
-			<div class="slideshow-container">
-
-				<div class="mySlides fade">
-				  <img src="/static/img/1.jpg">
-				</div>
-				<div class="mySlides fade">
-				  <img src="/static/img/2.jpg">
-				</div>
-				<div class="mySlides fade">		
-				  <img src="/static/img/3.jpg">	
-				</div>
-			</div>
-				<div style="text-align:center">
-				  <span class="dot" onclick="currentSlide(1)"></span> 
-				  <span class="dot" onclick="currentSlide(2)"></span> 
-				  <span class="dot" onclick="currentSlide(3)"></span> 
-				</div>
-			<script src="/static/script.js"></script>
-
-	 <!-- Slideshow container END -->
 			<!-- social media section -->
 			<a class="facebook" href="https://de-de.facebook.com/pg/CSD.Dresden/posts/">Facebook</a>
 			<a class="instagram" href="https://www.instagram.com/queerpridedd/?hl=en">Instagram</a>
@@ -45,7 +23,6 @@
 			
 		<!-- Social media end -->
 
-		</body>
 
 
 {% endblock %}
