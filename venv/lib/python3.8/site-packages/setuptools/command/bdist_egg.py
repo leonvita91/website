@@ -11,13 +11,14 @@ import os
 import re
 import textwrap
 import marshal
+import warnings
 
 from setuptools.extern import six
 
 from pkg_resources import get_build_platform, Distribution, ensure_directory
 from pkg_resources import EntryPoint
 from setuptools.extension import Library
-from setuptools import Command
+from setuptools import Command, SetuptoolsDeprecationWarning
 
 try:
     # Python 2.7 or >=3.2
@@ -54,10 +55,11 @@ def write_stub(resource, pyfile):
     _stub_template = textwrap.dedent("""
         def __bootstrap__():
             global __bootstrap__, __loader__, __file__
-            import sys, pkg_resources, imp
+            import sys, pkg_resources
+            from importlib.machinery import ExtensionFileLoader
             __file__ = pkg_resources.resource_filename(__name__, %r)
             __loader__ = None; del __bootstrap__, __loader__
-            imp.load_dynamic(__name__,__file__)
+            ExtensionFileLoader(__name__,__file__).load_module()
         __bootstrap__()
         """).lstrip()
     with open(pyfile, 'w') as f:
@@ -277,6 +279,12 @@ class bdist_egg(Command):
         ep = epm.get('setuptools.installation', {}).get('eggsecutable')
         if ep is None:
             return 'w'  # not an eggsecutable, do it the usual way.
+
+        warnings.warn(
+            "Eggsecutables are deprecated and will be removed in a future "
+            "version.",
+            SetuptoolsDeprecationWarning
+        )
 
         if not ep.attrs or ep.extras:
             raise DistutilsSetupError(
