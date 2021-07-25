@@ -1,5 +1,10 @@
 {% extends "ext.html" %}
 {% block nav %}
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='update-posts.css')}}">
+
+
 	{% with messages = get_flashed_messages() %}
 	  {% if messages %}
 	    <ul class=welcome-admin>

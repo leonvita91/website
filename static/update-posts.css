@@ -122,7 +122,9 @@
 		left:30%;
 }
 
-
+body {margin:0%;
+	max-height:100%;
+}
 
 
 
