@@ -14,7 +14,37 @@
 				<h3>{{third_post.title }}</h3>
 				<p class="p3">{{ third_post.content }}</p>
 			</div>
-			
+			<!--img src="{{url_for('static',filename = 'img/rainbow.jpg')}}"-->
+				 
+
+
+			<!-- Slideshow container -->
+		<div class="slideshow-container">
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="/static/img/csd1.jpg" style="width:100%">
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="/static/img/csd2.jpg" >
+		</div>		
+
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="/static/img/csd3.jpg" style="width:100%">
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		</div>
+		<br>
+		<script src="/static/script.js"></script>
+	
+
+
+
 			<!-- social media section -->
 			<a class="facebook" href="https://de-de.facebook.com/pg/CSD.Dresden/posts/">Facebook</a>
 			<a class="instagram" href="https://www.instagram.com/queerpridedd/?hl=en">Instagram</a>

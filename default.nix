@@ -6,8 +6,10 @@
 with pkgs;
 let
   my-python-packages = python-packages: with python-packages; [
-    
-   pip
+  
+	 pip flask flask-admin sqlalchemy flask_sqlalchemy flask_wtf email_validator
+        flask-bcrypt flask_login 
+  
  requests  
     # other python packages you want
   ];
